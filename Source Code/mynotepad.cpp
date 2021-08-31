@@ -11,6 +11,18 @@ myNOTEPAD::myNOTEPAD(QWidget *parent)
 
 myNOTEPAD::~myNOTEPAD()
 {
+    QString fileName = QFileDialog::getSaveFileName(this, "save as");
+    QFile file(fileName);
+    currentFile = fileName;
+    if(!file.open(QFile::WriteOnly | QFile::Text)){
+        QMessageBox::warning(this, "Warning", "Can't open file: " + file.errorString());
+        return;
+    }
+    setWindowTitle(fileName);
+    QTextStream out(&file);
+    QString text = ui->plainTextEdit->toPlainText();
+    out<<text;
+    file.close();
     delete ui;
 }
 
@@ -75,7 +87,10 @@ void myNOTEPAD::on_actionexit_triggered()
 
 void myNOTEPAD::on_actioncopy_triggered()
 {
-    ui->plainTextEdit->copy();
+    QClipboard *clip = QApplication::clipboard();
+    QString input = ui->plainTextEdit->toPlainText();
+    clip->setText(input);
+
 }
 
 void myNOTEPAD::on_actionpaste_triggered()
@@ -130,5 +145,15 @@ void myNOTEPAD::on_toolButton_clicked(bool checked)
     }
     else{
         qApp->setStyleSheet("");
+    }
+}
+
+void myNOTEPAD::on_toolButton_2_toggled(bool checked)
+{
+    QClipboard *clip = QApplication::clipboard();
+    QString input;
+    if(checked){
+        input = ui->plainTextEdit->toPlainText();
+        clip->setText(input);
     }
 }

@@ -10,6 +10,8 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QDebug>
+#include <QClipboard>
+#include <windows.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class myNOTEPAD; }
@@ -52,6 +54,8 @@ private slots:
     void on_horizontalSlider_valueChanged(int value);
 
     void on_toolButton_clicked(bool checked);
+
+    void on_toolButton_2_toggled(bool checked);
 
 private:
     Ui::myNOTEPAD *ui;
