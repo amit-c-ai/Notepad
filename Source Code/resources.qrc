@@ -13,9 +13,11 @@
         <file>Icons/Turtle.png</file>
         <file>Icons/bright-mode.png</file>
         <file>Icons/dark-mode.png</file>
+        <file>Icons/cpy.jpg</file>
+        <file>Icons/giphy.gif</file>
+        <file>Icons/cpyied.png</file>
     </qresource>
     <qresource prefix="/">
-        <file>QDarkStyleSheet/.github/ISSUE_TEMPLATE.md</file>
         <file>QDarkStyleSheet/docs/_static/css/badge_only.css</file>
         <file>QDarkStyleSheet/docs/_static/css/theme.css</file>
         <file>QDarkStyleSheet/docs/_static/fonts/Lato/lato-bold.eot</file>
@@ -646,6 +648,7 @@
         <file>QDarkStyleSheet/setup.py</file>
         <file>QDarkStyleSheet/stdeb.cfg</file>
         <file>QDarkStyleSheet/tox.ini</file>
+        <file>QDarkStyleSheet/.github/ISSUE_TEMPLATE.md</file>
     </qresource>
     <qresource prefix="/cssDark"/>
 </RCC>
