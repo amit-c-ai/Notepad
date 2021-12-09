@@ -22,7 +22,7 @@
 
 ![transparency](View/myNOTEPAD2.PNG)
 
-   * Cross-Platform Application, run on windows linux macOS Android.
+   * Cross-Platform Application, run on windows, linux, macOS, Android.
 
    * Speak button to say entire text written on notepad to user.
 
@@ -48,4 +48,4 @@
 
 [setup file for linux](https://github.com/amit-c-ai/Notepad/blob/master/Executables/notepad_opti.zip?raw=true)
 
-(Can also work on macOS and Android)
+(Can also work on macOS(require one time compilation on macOS) and Android)
