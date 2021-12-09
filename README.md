@@ -20,6 +20,14 @@
 
 ### 4. Transparency:
 
+<details>
+    <summary><b> View in Linux</b></summary>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <img src="View/linux1.png" alt="bright-mode" style="width: 40%;">
+        <img src="View/linux2.png" alt="dark-mode" style="width: 40%;">
+    </div>
+</details>
+
 ![transparency](View/myNOTEPAD2.PNG)
 
    * Cross-Platform Application, run on windows, linux, macOS, Android.
