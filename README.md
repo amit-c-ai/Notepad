@@ -22,6 +22,26 @@
 
 ![transparency](View/myNOTEPAD2.PNG)
 
+   * Cross-Platform Application, run on windows linux macOS Android.
+
+   * Speak button to say entire text written on notepad to user.
+
+   * Copy button to copy entire text in one click.
+
+## Technology Stack
+
+[QT Creater 4.13.1](https://www.qt.io/product/development-tools)
+
+[QTextToSpeech](https://doc.qt.io/qt-5/qtexttospeech.html)
+
+[QMessageBox](https://doc.qt.io/qt-5/qmessagebox.html)
+
+[QSound](https://doc.qt.io/qt-5/qsound.html)
+
+[QFile](https://doc.qt.io/qt-5/qfile.html)
+
+[QFileDialog](https://doc.qt.io/qt-5/qfiledialog.html)
+
 ## Setup Files
 
 [setup file for windows](https://github.com/amit-c-ai/Notepad/blob/master/Executables/release/installer/amiNotepadsetup.exe?raw=true)
