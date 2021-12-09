@@ -11,7 +11,13 @@
 #include <QPrintDialog>
 #include <QDebug>
 #include <QClipboard>
-#include <windows.h>
+#include <QFontDialog>
+#include <QFont>
+#include <QColorDialog>
+#include <QColor>
+#include <QSound>
+#include <QTextToSpeech>
+#include <QBrush>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class myNOTEPAD; }
@@ -56,6 +62,18 @@ private slots:
     void on_toolButton_clicked(bool checked);
 
     void on_toolButton_2_toggled(bool checked);
+
+    void on_actionFont_triggered();
+
+    void on_actionColor_triggered();
+
+    void updateText(int col, const QString &s);
+
+    void on_tabWidget_tabCloseRequested(int index);
+
+    void on_actionClose_Tab_triggered();
+
+    void on_toolButton_3_clicked();
 
 private:
     Ui::myNOTEPAD *ui;

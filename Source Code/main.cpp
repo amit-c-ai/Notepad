@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    myNOTEPAD w;
-    w.show();
+    myNOTEPAD notepad;
+    notepad.show();
     return a.exec();
 }

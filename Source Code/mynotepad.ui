@@ -18,159 +18,240 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    </item>
     <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QPlainTextEdit" name="plainTextEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="plainText">
-         <string/>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QToolButton" name="toolButton">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Triangular</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideLeft</enum>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="movable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Untitled1</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Current Tab</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QPlainTextEdit" name="plainTextEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="mouseTracking">
-           <bool>false</bool>
+          <property name="whatsThis">
+           <string>Text Edit</string>
           </property>
-          <property name="text">
+          <property name="plainText">
            <string/>
-          </property>
-          <property name="icon">
-           <iconset theme="dark" resource="resources.qrc">
-            <normaloff>:/images/Icons/dark-mode.png</normaloff>
-            <normalon>:/images/Icons/bright-mode.png</normalon>:/images/Icons/dark-mode.png</iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>40</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="autoRaise">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Minimum</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QSlider" name="horizontalSlider">
+           <widget class="QToolButton" name="toolButton">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="minimumSize">
+            <property name="mouseTracking">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset theme="dark" resource="resources.qrc">
+              <normaloff>:/images/Icons/dark-mode.png</normaloff>
+              <normalon>:/images/Icons/bright-mode.png</normalon>:/images/Icons/dark-mode.png</iconset>
+            </property>
+            <property name="iconSize">
              <size>
-              <width>300</width>
-              <height>22</height>
+              <width>40</width>
+              <height>40</height>
              </size>
             </property>
-            <property name="minimum">
-             <number>0</number>
+            <property name="checkable">
+             <bool>true</bool>
             </property>
-            <property name="maximum">
-             <number>70</number>
+            <property name="autoRaise">
+             <bool>true</bool>
             </property>
-            <property name="value">
-             <number>0</number>
-            </property>
-            <property name="sliderPosition">
-             <number>0</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="invertedControls">
+           </widget>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Minimum</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>10</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_2">
+            <property name="autoFillBackground">
              <bool>false</bool>
+            </property>
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <selectedoff>:/images/Icons/cpy.jpg</selectedoff>
+              <selectedon>:/images/Icons/cpyied.png</selectedon>
+             </iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>true</bool>
+            </property>
+            <property name="autoExclusive">
+             <bool>false</bool>
+            </property>
+            <property name="autoRepeatDelay">
+             <number>3</number>
+            </property>
+            <property name="autoRepeatInterval">
+             <number>300</number>
+            </property>
+            <property name="popupMode">
+             <enum>QToolButton::DelayedPopup</enum>
+            </property>
+            <property name="autoRaise">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="toolButton_3">
+            <property name="text">
+             <string>...</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/images/Icons/Speaker.png</normaloff>:/images/Icons/Speaker.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>40</width>
+              <height>40</height>
+             </size>
             </property>
            </widget>
           </item>
          </layout>
         </item>
-        <item>
-         <widget class="QToolButton" name="toolButton_2">
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="text">
-           <string>...</string>
-          </property>
-          <property name="icon">
-           <iconset>
-            <selectedoff>:/images/Icons/cpy.jpg</selectedoff>
-            <selectedon>:/images/Icons/cpyied.png</selectedon>
-           </iconset>
-          </property>
-          <property name="iconSize">
-           <size>
-            <width>40</width>
-            <height>40</height>
-           </size>
-          </property>
-          <property name="checkable">
-           <bool>true</bool>
-          </property>
-          <property name="checked">
-           <bool>false</bool>
-          </property>
-          <property name="autoRepeat">
-           <bool>true</bool>
-          </property>
-          <property name="autoExclusive">
-           <bool>false</bool>
-          </property>
-          <property name="autoRepeatDelay">
-           <number>3</number>
-          </property>
-          <property name="autoRepeatInterval">
-           <number>300</number>
-          </property>
-          <property name="popupMode">
-           <enum>QToolButton::DelayedPopup</enum>
-          </property>
-          <property name="autoRaise">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
        </layout>
-      </item>
-     </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QSlider" name="horizontalSlider">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>22</height>
+       </size>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>70</number>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="sliderPosition">
+       <number>0</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="invertedControls">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -185,17 +266,19 @@
    </property>
    <widget class="QMenu" name="menufile">
     <property name="title">
-     <string>file</string>
+     <string>File</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="actionnew"/>
     <addaction name="actionopen"/>
+    <addaction name="actionClose_Tab"/>
     <addaction name="actionsave_as"/>
     <addaction name="actionprint"/>
     <addaction name="actionexit"/>
    </widget>
    <widget class="QMenu" name="menuedit">
     <property name="title">
-     <string>edit</string>
+     <string>Edit</string>
     </property>
     <addaction name="actioncopy"/>
     <addaction name="actionpaste"/>
@@ -205,14 +288,24 @@
    </widget>
    <widget class="QMenu" name="menuview">
     <property name="title">
-     <string>view</string>
+     <string>View</string>
     </property>
     <addaction name="actionzoom_in"/>
     <addaction name="actionzoom_out"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuFormat">
+    <property name="title">
+     <string>Format</string>
+    </property>
+    <addaction name="actionFont"/>
+    <addaction name="actionColor"/>
+    <addaction name="separator"/>
    </widget>
    <addaction name="menufile"/>
    <addaction name="menuedit"/>
    <addaction name="menuview"/>
+   <addaction name="menuFormat"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionnew">
@@ -221,7 +314,7 @@
      <normaloff>:/images/Icons/New.bmp</normaloff>:/images/Icons/New.bmp</iconset>
    </property>
    <property name="text">
-    <string>new</string>
+    <string>Newn</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
@@ -233,7 +326,7 @@
      <normaloff>:/images/Icons/Open.bmp</normaloff>:/images/Icons/Open.bmp</iconset>
    </property>
    <property name="text">
-    <string>open</string>
+    <string>Open</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+O</string>
@@ -245,7 +338,7 @@
      <normaloff>:/images/Icons/Save.bmp</normaloff>:/images/Icons/Save.bmp</iconset>
    </property>
    <property name="text">
-    <string>save as</string>
+    <string>Save As...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
@@ -253,7 +346,7 @@
   </action>
   <action name="actionprint">
    <property name="text">
-    <string>print</string>
+    <string>Print...</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
@@ -261,7 +354,7 @@
   </action>
   <action name="actionexit">
    <property name="text">
-    <string>exit</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="actioncopy">
@@ -270,7 +363,7 @@
      <normaloff>:/images/Icons/Copy.bmp</normaloff>:/images/Icons/Copy.bmp</iconset>
    </property>
    <property name="text">
-    <string>copy</string>
+    <string>Copy</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+C</string>
@@ -282,7 +375,7 @@
      <normaloff>:/images/Icons/Paste.bmp</normaloff>:/images/Icons/Paste.bmp</iconset>
    </property>
    <property name="text">
-    <string>paste</string>
+    <string>Paste</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+V</string>
@@ -290,7 +383,7 @@
   </action>
   <action name="actionundo">
    <property name="text">
-    <string>undo</string>
+    <string>Undo</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>
@@ -298,7 +391,7 @@
   </action>
   <action name="actionredo">
    <property name="text">
-    <string>redo</string>
+    <string>Redo</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+Y</string>
@@ -311,7 +404,7 @@
      <normalon>:/images/Icons/Cut.bmp</normalon>:/images/Icons/Cut.bmp</iconset>
    </property>
    <property name="text">
-    <string>cut</string>
+    <string>Cut</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+X</string>
@@ -319,7 +412,7 @@
   </action>
   <action name="actionzoom_in">
    <property name="text">
-    <string>zoom in</string>
+    <string>Zoom In</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+=</string>
@@ -327,7 +420,7 @@
   </action>
   <action name="actionzoom_out">
    <property name="text">
-    <string>zoom out</string>
+    <string>Zoom Out</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+-</string>
@@ -339,6 +432,24 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font</string>
+   </property>
+  </action>
+  <action name="actionColor">
+   <property name="text">
+    <string>Color</string>
+   </property>
+  </action>
+  <action name="actionClose_Tab">
+   <property name="text">
+    <string>Close Tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
    </property>
   </action>
  </widget>

@@ -16,6 +16,7 @@
         <file>Icons/cpy.jpg</file>
         <file>Icons/giphy.gif</file>
         <file>Icons/cpyied.png</file>
+        <file>Icons/Speaker.png</file>
     </qresource>
     <qresource prefix="/">
         <file>QDarkStyleSheet/docs/_static/css/badge_only.css</file>
@@ -649,6 +650,7 @@
         <file>QDarkStyleSheet/stdeb.cfg</file>
         <file>QDarkStyleSheet/tox.ini</file>
         <file>QDarkStyleSheet/.github/ISSUE_TEMPLATE.md</file>
+        <file>QDarkStyleSheet/qdarkstyle/dark/audio.mp3</file>
     </qresource>
     <qresource prefix="/cssDark"/>
 </RCC>
