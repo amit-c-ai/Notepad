@@ -22,6 +22,7 @@
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -44,19 +45,30 @@ public:
     QAction *actionzoom_in;
     QAction *actionzoom_out;
     QAction *actiondefault_zoom;
+    QAction *actionFont;
+    QAction *actionColor;
+    QAction *actionClose_Tab;
     QWidget *centralwidget;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_2;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QGridLayout *gridLayout_2;
     QPlainTextEdit *plainTextEdit;
-    QHBoxLayout *horizontalLayout;
+    QHBoxLayout *horizontalLayout_2;
     QToolButton *toolButton;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *verticalLayout_3;
+    QSpacerItem *horizontalSpacer;
     QSpacerItem *verticalSpacer;
+    QToolButton *toolButton_2;
+    QToolButton *toolButton_3;
+    QWidget *tab_2;
     QSlider *horizontalSlider;
     QMenuBar *menubar;
     QMenu *menufile;
     QMenu *menuedit;
     QMenu *menuview;
+    QMenu *menuFormat;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *myNOTEPAD)
@@ -110,13 +122,36 @@ public:
         actionzoom_out->setObjectName(QString::fromUtf8("actionzoom_out"));
         actiondefault_zoom = new QAction(myNOTEPAD);
         actiondefault_zoom->setObjectName(QString::fromUtf8("actiondefault_zoom"));
+        actionFont = new QAction(myNOTEPAD);
+        actionFont->setObjectName(QString::fromUtf8("actionFont"));
+        actionColor = new QAction(myNOTEPAD);
+        actionColor->setObjectName(QString::fromUtf8("actionColor"));
+        actionClose_Tab = new QAction(myNOTEPAD);
+        actionClose_Tab->setObjectName(QString::fromUtf8("actionClose_Tab"));
         centralwidget = new QWidget(myNOTEPAD);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         gridLayout = new QGridLayout(centralwidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        plainTextEdit = new QPlainTextEdit(centralwidget);
+
+        gridLayout->addLayout(verticalLayout_2, 2, 0, 1, 1);
+
+        tabWidget = new QTabWidget(centralwidget);
+        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setLayoutDirection(Qt::LeftToRight);
+        tabWidget->setAutoFillBackground(false);
+        tabWidget->setTabPosition(QTabWidget::North);
+        tabWidget->setTabShape(QTabWidget::Triangular);
+        tabWidget->setElideMode(Qt::ElideLeft);
+        tabWidget->setTabsClosable(true);
+        tabWidget->setMovable(true);
+        tabWidget->setTabBarAutoHide(true);
+        tab = new QWidget();
+        tab->setObjectName(QString::fromUtf8("tab"));
+        gridLayout_2 = new QGridLayout(tab);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        plainTextEdit = new QPlainTextEdit(tab);
         plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         sizePolicy.setHorizontalStretch(0);
@@ -124,11 +159,11 @@ public:
         sizePolicy.setHeightForWidth(plainTextEdit->sizePolicy().hasHeightForWidth());
         plainTextEdit->setSizePolicy(sizePolicy);
 
-        verticalLayout_2->addWidget(plainTextEdit);
+        gridLayout_2->addWidget(plainTextEdit, 0, 0, 1, 1);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        toolButton = new QToolButton(centralwidget);
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        toolButton = new QToolButton(tab);
         toolButton->setObjectName(QString::fromUtf8("toolButton"));
         QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
@@ -147,15 +182,61 @@ public:
         toolButton->setIcon(icon6);
         toolButton->setIconSize(QSize(40, 40));
         toolButton->setCheckable(true);
-        toolButton->setAutoRaise(false);
+        toolButton->setAutoRaise(true);
 
-        horizontalLayout->addWidget(toolButton);
+        horizontalLayout_2->addWidget(toolButton);
 
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout_3 = new QVBoxLayout();
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        verticalLayout_3->addItem(horizontalSpacer);
+
         verticalSpacer = new QSpacerItem(20, 10, QSizePolicy::Minimum, QSizePolicy::Minimum);
 
-        verticalLayout->addItem(verticalSpacer);
+        verticalLayout_3->addItem(verticalSpacer);
+
+
+        horizontalLayout_2->addLayout(verticalLayout_3);
+
+        toolButton_2 = new QToolButton(tab);
+        toolButton_2->setObjectName(QString::fromUtf8("toolButton_2"));
+        toolButton_2->setAutoFillBackground(false);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/images/Icons/cpy.jpg"), QSize(), QIcon::Selected, QIcon::Off);
+        icon7.addFile(QString::fromUtf8(":/images/Icons/cpyied.png"), QSize(), QIcon::Selected, QIcon::On);
+        toolButton_2->setIcon(icon7);
+        toolButton_2->setIconSize(QSize(40, 40));
+        toolButton_2->setCheckable(true);
+        toolButton_2->setChecked(false);
+        toolButton_2->setAutoRepeat(true);
+        toolButton_2->setAutoExclusive(false);
+        toolButton_2->setAutoRepeatDelay(3);
+        toolButton_2->setAutoRepeatInterval(300);
+        toolButton_2->setPopupMode(QToolButton::DelayedPopup);
+        toolButton_2->setAutoRaise(true);
+
+        horizontalLayout_2->addWidget(toolButton_2);
+
+        toolButton_3 = new QToolButton(tab);
+        toolButton_3->setObjectName(QString::fromUtf8("toolButton_3"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/images/Icons/Speaker.png"), QSize(), QIcon::Normal, QIcon::Off);
+        toolButton_3->setIcon(icon8);
+        toolButton_3->setIconSize(QSize(40, 40));
+
+        horizontalLayout_2->addWidget(toolButton_3);
+
+
+        gridLayout_2->addLayout(horizontalLayout_2, 1, 0, 1, 1);
+
+        tabWidget->addTab(tab, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        tab_2->setLayoutDirection(Qt::LeftToRight);
+        tabWidget->addTab(tab_2, QString());
+
+        gridLayout->addWidget(tabWidget, 0, 0, 1, 1);
 
         horizontalSlider = new QSlider(centralwidget);
         horizontalSlider->setObjectName(QString::fromUtf8("horizontalSlider"));
@@ -172,16 +253,7 @@ public:
         horizontalSlider->setOrientation(Qt::Horizontal);
         horizontalSlider->setInvertedControls(false);
 
-        verticalLayout->addWidget(horizontalSlider);
-
-
-        horizontalLayout->addLayout(verticalLayout);
-
-
-        verticalLayout_2->addLayout(horizontalLayout);
-
-
-        gridLayout->addLayout(verticalLayout_2, 0, 0, 1, 1);
+        gridLayout->addWidget(horizontalSlider, 1, 0, 1, 1);
 
         myNOTEPAD->setCentralWidget(centralwidget);
         menubar = new QMenuBar(myNOTEPAD);
@@ -193,6 +265,8 @@ public:
         menuedit->setObjectName(QString::fromUtf8("menuedit"));
         menuview = new QMenu(menubar);
         menuview->setObjectName(QString::fromUtf8("menuview"));
+        menuFormat = new QMenu(menubar);
+        menuFormat->setObjectName(QString::fromUtf8("menuFormat"));
         myNOTEPAD->setMenuBar(menubar);
         statusbar = new QStatusBar(myNOTEPAD);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -201,8 +275,11 @@ public:
         menubar->addAction(menufile->menuAction());
         menubar->addAction(menuedit->menuAction());
         menubar->addAction(menuview->menuAction());
+        menubar->addAction(menuFormat->menuAction());
+        menufile->addSeparator();
         menufile->addAction(actionnew);
         menufile->addAction(actionopen);
+        menufile->addAction(actionClose_Tab);
         menufile->addAction(actionsave_as);
         menufile->addAction(actionprint);
         menufile->addAction(actionexit);
@@ -213,8 +290,15 @@ public:
         menuedit->addAction(actionredo);
         menuview->addAction(actionzoom_in);
         menuview->addAction(actionzoom_out);
+        menuview->addSeparator();
+        menuFormat->addAction(actionFont);
+        menuFormat->addAction(actionColor);
+        menuFormat->addSeparator();
 
         retranslateUi(myNOTEPAD);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(myNOTEPAD);
     } // setupUi
@@ -222,48 +306,48 @@ public:
     void retranslateUi(QMainWindow *myNOTEPAD)
     {
         myNOTEPAD->setWindowTitle(QApplication::translate("myNOTEPAD", "myNOTEPAD", nullptr));
-        actionnew->setText(QApplication::translate("myNOTEPAD", "new", nullptr));
+        actionnew->setText(QApplication::translate("myNOTEPAD", "Newn", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionnew->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+N", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionopen->setText(QApplication::translate("myNOTEPAD", "open", nullptr));
+        actionopen->setText(QApplication::translate("myNOTEPAD", "Open", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionopen->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+O", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionsave_as->setText(QApplication::translate("myNOTEPAD", "save as", nullptr));
+        actionsave_as->setText(QApplication::translate("myNOTEPAD", "Save As...", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionsave_as->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+S", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionprint->setText(QApplication::translate("myNOTEPAD", "print", nullptr));
+        actionprint->setText(QApplication::translate("myNOTEPAD", "Print...", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionprint->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+P", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionexit->setText(QApplication::translate("myNOTEPAD", "exit", nullptr));
-        actioncopy->setText(QApplication::translate("myNOTEPAD", "copy", nullptr));
+        actionexit->setText(QApplication::translate("myNOTEPAD", "Exit", nullptr));
+        actioncopy->setText(QApplication::translate("myNOTEPAD", "Copy", nullptr));
 #ifndef QT_NO_SHORTCUT
         actioncopy->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+C", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionpaste->setText(QApplication::translate("myNOTEPAD", "paste", nullptr));
+        actionpaste->setText(QApplication::translate("myNOTEPAD", "Paste", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionpaste->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+V", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionundo->setText(QApplication::translate("myNOTEPAD", "undo", nullptr));
+        actionundo->setText(QApplication::translate("myNOTEPAD", "Undo", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionundo->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+Z", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionredo->setText(QApplication::translate("myNOTEPAD", "redo", nullptr));
+        actionredo->setText(QApplication::translate("myNOTEPAD", "Redo", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionredo->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+Y", nullptr));
 #endif // QT_NO_SHORTCUT
-        actioncut->setText(QApplication::translate("myNOTEPAD", "cut", nullptr));
+        actioncut->setText(QApplication::translate("myNOTEPAD", "Cut", nullptr));
 #ifndef QT_NO_SHORTCUT
         actioncut->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+X", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionzoom_in->setText(QApplication::translate("myNOTEPAD", "zoom in", nullptr));
+        actionzoom_in->setText(QApplication::translate("myNOTEPAD", "Zoom In", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionzoom_in->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+=", nullptr));
 #endif // QT_NO_SHORTCUT
-        actionzoom_out->setText(QApplication::translate("myNOTEPAD", "zoom out", nullptr));
+        actionzoom_out->setText(QApplication::translate("myNOTEPAD", "Zoom Out", nullptr));
 #ifndef QT_NO_SHORTCUT
         actionzoom_out->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+-", nullptr));
 #endif // QT_NO_SHORTCUT
@@ -271,11 +355,26 @@ public:
 #ifndef QT_NO_SHORTCUT
         actiondefault_zoom->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+D", nullptr));
 #endif // QT_NO_SHORTCUT
+        actionFont->setText(QApplication::translate("myNOTEPAD", "Font", nullptr));
+        actionColor->setText(QApplication::translate("myNOTEPAD", "Color", nullptr));
+        actionClose_Tab->setText(QApplication::translate("myNOTEPAD", "Close Tab", nullptr));
+#ifndef QT_NO_SHORTCUT
+        actionClose_Tab->setShortcut(QApplication::translate("myNOTEPAD", "Ctrl+W", nullptr));
+#endif // QT_NO_SHORTCUT
+#ifndef QT_NO_WHATSTHIS
+        plainTextEdit->setWhatsThis(QApplication::translate("myNOTEPAD", "Text Edit", nullptr));
+#endif // QT_NO_WHATSTHIS
         plainTextEdit->setPlainText(QString());
         toolButton->setText(QString());
-        menufile->setTitle(QApplication::translate("myNOTEPAD", "file", nullptr));
-        menuedit->setTitle(QApplication::translate("myNOTEPAD", "edit", nullptr));
-        menuview->setTitle(QApplication::translate("myNOTEPAD", "view", nullptr));
+        toolButton_2->setText(QApplication::translate("myNOTEPAD", "...", nullptr));
+        toolButton_3->setText(QApplication::translate("myNOTEPAD", "...", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("myNOTEPAD", "Untitled1", nullptr));
+        tabWidget->setTabToolTip(tabWidget->indexOf(tab), QApplication::translate("myNOTEPAD", "Current Tab", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("myNOTEPAD", "Tab 2", nullptr));
+        menufile->setTitle(QApplication::translate("myNOTEPAD", "File", nullptr));
+        menuedit->setTitle(QApplication::translate("myNOTEPAD", "Edit", nullptr));
+        menuview->setTitle(QApplication::translate("myNOTEPAD", "View", nullptr));
+        menuFormat->setTitle(QApplication::translate("myNOTEPAD", "Format", nullptr));
     } // retranslateUi
 
 };
